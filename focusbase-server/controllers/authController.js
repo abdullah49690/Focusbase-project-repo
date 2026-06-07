@@ -1,6 +1,6 @@
 
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 // Register 
@@ -26,7 +26,7 @@ exports.registerUser = async (req, res) => {
     name,
     email,
     password: hashedPassword,
-    role: userCount ? "admin" : "user";
+    role: userCount ? "admin" : "user",
   })
 
   res.status(201).json({
@@ -41,6 +41,7 @@ exports.registerUser = async (req, res) => {
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
 
+  // Check if the user exists
   const user = await User.findOne({ email });
 
   // compare password:
