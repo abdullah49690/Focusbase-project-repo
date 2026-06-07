@@ -16,18 +16,18 @@ A robust, secure, and production-ready RESTful API backend built to manage perso
 - **Security & Utilities:** `bcryptjs`, `jsonwebtoken`, `helmet`, `express-rate-limit`, `dotenv`
 
 ## ⚙️ Environment Variables
-To execute this project locally, create a `.env` file in the root directory and specify the following variables:
+To execute this project locally, create a `.env` file in the root directory and specify the following variables (Note: Replace it with your actual keys):
 ```env
 
-MONGO_URI=mongodb+srv://muhammadabdullah4974_db_user:abdullah_mgDB_123@cluster0.blqe06s.mongodb.net/
-JWT_SECRET=mysupersecretkey123
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/focusbase
+JWT_SECRET=your_super_secret_jwt_key_here
 
 ```
 
 When you try to GET tasks or create task, you would first need to authenticate your self and verfify that you have the ownership of the resource, so for that you would need to add bearer token in the Authorization tab.
 <br>
 
-The bearer token looks something like this: ` [ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTIzMTM3NzdkYTA1YmIyZDA5MTc3NGMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDY4MzkxMiwiZXhwIjoxNzgwNzcwMzEyfQ.EQpDIQorT8lJm_XkZrCm06anuFhaoFsgy0ZkXvrd0rk" ]` 
+The bearer token looks something like this: ` [ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTbbmMGHffnvGHgcCCfgcCFGkYTA1YmIyZDA5MTc3NGMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDY4MzkxMiwiZXhwIjoxNzgwNzcwMzEyfQ.EQpDIQorT8lJm_XkZrCm06anuFhaoFsgy0ZkXvrd0rk" ]` 
 
 <br>
 You can get yours token when you login.
